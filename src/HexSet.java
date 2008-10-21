@@ -1,3 +1,5 @@
+// Author: Jesse Fish
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -12,7 +14,7 @@ public class HexSet extends InputSet {
 	{
 		super("Hexidecimal");
 	}
-	
+
 	@Override
 	public void convert_from(int[] input) {
 		String answer="";
@@ -30,29 +32,33 @@ public class HexSet extends InputSet {
 		scanner.useDelimiter(delim);
 		int total=0;
 		try{
-		while(scanner.hasNext())
-		{
-			scanner.next();
-			total++;
-		}
-		scanner.close();
-		int[] answer=new int[total];
-		
-		
-		scanner=new Scanner(value);
-		scanner.useDelimiter(delim);
-		String temp;
-		for(int i=0;i<total;i++)
-		{
-			temp=scanner.next();
-			answer[i]=Integer.valueOf(temp, 16);
-		}
-		scanner.close();
-		return answer;
+			while(scanner.hasNext())
+			{
+				scanner.next();
+				total++;
+			}
+			scanner.close();
+			int[] answer=new int[total];
+
+
+			scanner=new Scanner(value);
+			scanner.useDelimiter(delim);
+			String temp;
+			for(int i=0;i<total;i++)
+			{
+				temp=scanner.next();
+				answer[i]=Integer.valueOf(temp, 16);
+			}
+			scanner.close();
+			return answer;
 		}
 		catch(InputMismatchException e)
 		{
-			
+
+			return null;
+		}
+		catch(NumberFormatException e)
+		{
 			return null;
 		}
 	}

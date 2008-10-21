@@ -1,3 +1,4 @@
+// Author: Jesse Fish
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -101,14 +102,18 @@ public class MorseSet extends InputSet {
 			scanner.useDelimiter(delim);
 			for(int i=0;i<total;i++)
 			{
-				Integer a=this.reverseLookup.get(scanner.next());
-				if(a==null)
+				String next=scanner.next();
+				Integer a=this.reverseLookup.get(next);
+				if(next.trim().equals(""))
 				{
 					answer[i]=32;
 				}
+				else if(a==null)
+				{
+					return null;
+				}
 				else{
 					answer[i]=a;
-
 				}
 
 			}

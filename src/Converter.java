@@ -1,3 +1,4 @@
+// Author: Jesse Fish
 
 import java.applet.Applet;
 import java.awt.BorderLayout;
@@ -11,6 +12,7 @@ import java.awt.event.ItemListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 //import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -166,7 +168,7 @@ public class Converter extends Applet{
 		}
 		else
 		{
-			System.out.println("invalid input for that type");
+			JOptionPane.showMessageDialog(null, "invalid input for that type", "ERROR", JOptionPane.ERROR_MESSAGE);
 		}
 		refresh();
 	}
@@ -212,6 +214,7 @@ public class Converter extends Applet{
 		window.pack();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setSize(width,heigth);
+		window.setResizable(false);
 		window.setVisible(true);
 	}
 }
