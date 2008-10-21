@@ -1,3 +1,5 @@
+// Author: Jesse Fish
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -52,7 +54,10 @@ public class BinSet extends InputSet{
 		}
 		catch(InputMismatchException e)
 		{
-			
+			return null;
+		}
+		catch(NumberFormatException e)
+		{
 			return null;
 		}
 	}

@@ -1,3 +1,4 @@
+// Author: Jesse Fish
 
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;

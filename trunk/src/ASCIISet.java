@@ -1,3 +1,5 @@
+// Author: Jesse Fish
+
 
 public class ASCIISet extends InputSet{
 

@@ -1,3 +1,4 @@
+// Author: Jesse Fish
 
 import java.awt.Color;
 import java.awt.Dimension;
