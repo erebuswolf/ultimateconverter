@@ -12,7 +12,7 @@ public class HexSet extends InputSet {
 	private static final long serialVersionUID = 10192008L;
 	public HexSet()
 	{
-		super("Hexidecimal");
+		super("Hexadecimal");
 	}
 
 	@Override
