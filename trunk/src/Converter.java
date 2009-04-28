@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 //import javax.swing.JLabel;
 import javax.swing.JPanel;
-//import javax.swing.border.TitledBorder;
+import javax.swing.border.TitledBorder;
 
 
 public class Converter extends Applet{
@@ -25,7 +25,7 @@ public class Converter extends Applet{
 	 */
 	private static final long serialVersionUID = 10192008L;
 	public static final int width=650;
-	public static final int heigth=750;
+	public static final int heigth=800;
 	public boolean applet=true;
 	private IntSet intSet;
 	private ASCIISet asciiSet;
@@ -37,17 +37,17 @@ public class Converter extends Applet{
 
 	private JPanel buttons;
 	private JPanel text;
-	//private JPanel mainpanel;
+	private JPanel mainpanel;
 	private ButtonGroup selectgroup;
 
 	private JButton convertbutton;
 	private SemMaker semMaker;
 	public void init()
 	{
-	//	mainpanel=new JPanel(new BorderLayout());
-		//this.add(mainpanel);
+		mainpanel=new JPanel(new BorderLayout());
+		this.add(mainpanel);
 		
-		this.setLayout(new BorderLayout());
+		mainpanel.setLayout(new BorderLayout());
 		convertbutton=new JButton("Convert");
 		allInputs=new InputSet[6];
 		selectgroup=new ButtonGroup();
@@ -58,11 +58,11 @@ public class Converter extends Applet{
 		buttons=new JPanel(layout);
 		text=new JPanel(layout);
 
-	//	mainpanel.add(buttons,BorderLayout.WEST);
-	//	mainpanel.add(text,BorderLayout.CENTER);
+		mainpanel.add(buttons,BorderLayout.WEST);
+		mainpanel.add(text,BorderLayout.CENTER);
 		
-		this.add(buttons,BorderLayout.WEST);
-		this.add(text,BorderLayout.CENTER);
+		mainpanel.add(buttons,BorderLayout.WEST);
+		mainpanel.add(text,BorderLayout.CENTER);
 			
 		//buttons.add(new JLabel("  Input Type"));
 		//text.add(new Box(0));
@@ -142,7 +142,7 @@ public class Converter extends Applet{
 			allInputs[i].select.addItemListener(new RadioButtonHandler());
 		}
 	
-		//mainpanel.setBorder(new TitledBorder("Select the input type and Convert fromt there"));
+		mainpanel.setBorder(new TitledBorder("Select the input type, enter the message and presss Convert"));
 		setSize(width,heigth);
 	}
 	public void refresh()
