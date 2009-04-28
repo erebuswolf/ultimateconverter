@@ -36,35 +36,22 @@ public class SemSet extends InputSet {
 
 		try {
 			Scanner input;
-			if(conv.applet)
-			{
-				input=new Scanner((new URL(conv.getCodeBase(),fileName)).openStream());
-			}
-			else
-			{
-				input=new Scanner(new File(fileName));
-			}
+			input = new Scanner(Converter.class.getResource(fileName).openStream());
+
 			int temp=0;
 			String tempstring="";
 			while(input.hasNext())
 			{
 				temp=input.nextInt();
 				tempstring=input.next();
-				tempstring="./80px/"+tempstring;
+				tempstring="80px/"+tempstring;
 				BufferedImage tempimage;
 				try {
-					if(conv.applet)
-					{
-						tempimage = ImageIO.read(new URL(conv.getCodeBase(),tempstring));
-					}
-					else
-					{
-						tempimage = ImageIO.read(new File(tempstring));
-					}
+					tempimage = ImageIO.read(Converter.class.getResource(tempstring));
 					//tempimage = ImageIO.read(new URL(conv.getCodeBase(),tempstring));
 
 					semlookup.put(temp, tempimage);
-				} catch (IOException e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
@@ -188,7 +175,7 @@ public class SemSet extends InputSet {
 			}
 		}
 		flagArea.currentImage=flagMessage;
-		
+
 		flagArea.revalidate();
 	}
 

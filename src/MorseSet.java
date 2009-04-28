@@ -26,15 +26,8 @@ public class MorseSet extends InputSet {
 		reverseLookup=new Hashtable<String,Integer> ();
 		Scanner input;
 		try {
-			if(conv.applet)
-			{
-				input = new Scanner((new URL(conv.getCodeBase(),fileName)).openStream());
-			}
-			else
-			{
-				input = new Scanner((new File(fileName)));
-			}
-			
+			input = new Scanner(Converter.class.getResource(fileName).openStream());
+
 			int temp=0;
 			String tempstring="";
 			while(input.hasNext())
